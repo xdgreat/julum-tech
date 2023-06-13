@@ -5,6 +5,7 @@ fetch('data.json')
         return el.name
     })
     renderData(itemName)
+
   })
   .catch(error => {
     console.error(error);
