@@ -1,31 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Assistant&display=swap");
 
-:root{
-    --bg-main: ;
-    --bg-secondary: ;
-    --font-main: ;
-    --font-secondary: ;
+:root {
+  --bg-main: ;
+  --bg-secondary: ;
+  --font-main: ;
+  --font-secondary: ;
 }
 
-body{
-
+body {
+  font-family: "Assistant";
+  height: 500dvh;
 }
 
-.logo{
-    width: auto;
-    height: 100px;
+.logo {
+  width: auto;
+  height: 80px;
+  filter: hue-rotate(270deg) invert(100%);
 }
 
-#images{
-    display: flex;
-    flex-flow: row wrap;
-    margin-inline: auto;
-    justify-content: center;
-    align-items: center;
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
 }
 
-.test{
-    width: auto;
-    height: 300px;
-    
+.links {
+  font-size: 27px;
+  margin-inline-end: 0.8em;
+}
+
+.cart {
+  width: auto;
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+  margin: 0;
+}
+.hero-section {
+  position: relative;
+  color: white;
+  background-color: #e5e5e5;
+  isolation: isolate;
+  height: 80dvh;
+}
+.hero {
+  background-position: bottom;
+  background-size: cover;
+  background-image: url("./media/main.jpg");
+  background-repeat: no-repeat;
+  filter: brightness(40%);
+  transition: background-image 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.images {
+  transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.hero-content {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-inline-start: 7em;
+  position: absolute;
+  top: 30%;
+}
+
+.hero-title {
+  font-size: 60px;
+}
+.hero-content-p {
+  width: 50%;
+  font-size: 26px;
+}
+
+.hero-btn {
+  font-size: 27px;
+  margin-block: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+.hero-btn > a {
+  padding: 0.25em;
+  border-radius: 5px;
+  width: fit-content;
+}
+.hero-btn :first-child {
+  outline: 1px solid white;
 }
