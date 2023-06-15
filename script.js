@@ -1,52 +1,51 @@
-const container = document.getElementById("navigation");
-const d = [
+const data = [
   {
     name: "iPhone 12",
     color: "Red",
     description:
       "Sleek design, Super Retina XDR display, A14 Bionic chip, 5G connectivity, advanced dual-camera system.",
-    image: "./media/12-red.jfif",
-    imageClose: "./media/12-red-close.jfif",
+    image: "./media/12-red.jpg",
+    imageClose: "./media/12-red-close.jpg",
   },
   {
     name: "iPhone 12",
     color: "Blue",
     description:
       "Sleek design, Super Retina XDR display, A14 Bionic chip, 5G connectivity, advanced dual-camera system.",
-    image: "./media/12-blue.jfif",
-    imageClose: "./media/12-blue-close.jfif",
+    image: "./media/12-blue.jpg",
+    imageClose: "./media/12-blue-close.jpg",
   },
   {
     name: "iPhone 13",
     color: "Pink",
     description:
       "Refined design, enhanced display, A15 Bionic chip, advanced camera features, extended battery life.",
-    image: "./media/13-pink.jfif",
-    imageClose: "./media/13-pink-close.jfif",
+    image: "./media/13-pink.jpg",
+    imageClose: "./media/13-pink-close.jpg",
   },
   {
     name: "iPhone 13",
     color: "Red",
     description:
       "Refined design, enhanced display, A15 Bionic chip, advanced camera features, extended battery life.",
-    image: "./media/13-red.jfif",
-    imageClose: "./media/13-red-close.jfif",
+    image: "./media/13-red.jpg",
+    imageClose: "./media/13-red-close.jpg",
   },
   {
     name: "iPhone 14",
     color: "Black",
     description:
       "Redesigned, edge-to-edge ProMotion display, A16 Bionic chip, improved camera, larger battery, advanced privacy features, 5G support.",
-    image: "./media/14-black.jfif",
-    imageClose: "./media/14-black-close.jfif",
+    image: "./media/14-black.jpg",
+    imageClose: "./media/14-black-close.jpg",
   },
   {
     name: "iPhone 14",
     color: "Red",
     description:
       "Redesigned, edge-to-edge ProMotion display, A16 Bionic chip, improved camera, larger battery, advanced privacy features, 5G support.",
-    image: "./media/14-red.jfif",
-    imageClose: "./media/14-red-close.jfif",
+    image: "./media/14-red.jpg",
+    imageClose: "./media/14-red-close.jpg",
   },
 ];
 
@@ -75,7 +74,7 @@ const create = (tag = "div", options = {}, children = []) => {
 };
 
 document.querySelector("#test").append(
-  ...d.map((el) =>
+  ...data.map((el) =>
     create("li", {}, [
       create("h3", {
         textContent: el.name,
@@ -88,3 +87,14 @@ document.querySelector("#test").append(
     ])
   )
 );
+
+
+document.querySelector('#images').append(
+  ...data.map(img=> create("div",{},[
+    create("img",{
+      src:img.image,
+      className:"test"
+    })
+  ]))
+)
+

@@ -7,4 +7,25 @@
     --font-secondary: ;
 }
 
-body{}
+body{
+
+}
+
+.logo{
+    width: auto;
+    height: 100px;
+}
+
+#images{
+    display: flex;
+    flex-flow: row wrap;
+    margin-inline: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.test{
+    width: auto;
+    height: 300px;
+    
+}
