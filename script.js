@@ -4,16 +4,16 @@ const data = [
     color: "Red",
     description:
       "Sleek design, Super Retina XDR display, A14 Bionic chip, 5G connectivity, advanced dual-camera system.",
-    image: "./media/12-red.jpg",
+    image: "./media/12-red.png",
     imageClose: "./media/12-red-close.jpg",
     heroImage:"./media/hero-one.jpg"
   },
   {
-    name: "iPhone 12",
+    name: "iPhone 12 Pro",
     color: "Blue",
     description:
       "Sleek design, Super Retina XDR display, A14 Bionic chip, 5G connectivity, advanced dual-camera system.",
-    image: "./media/12-blue.jpg",
+    image: "./media/12-blue.png",
     imageClose: "./media/12-blue-close.jpg",
     heroImage:"./media/hero-two.jpg"
   },
@@ -22,16 +22,16 @@ const data = [
     color: "Pink",
     description:
       "Refined design, enhanced display, A15 Bionic chip, advanced camera features, extended battery life.",
-    image: "./media/13-pink.jpg",
+    image: "./media/13-pink.png",
     imageClose: "./media/13-pink-close.jpg",
     heroImage:"./media/hero-three.jpg"
   },
   {
-    name: "iPhone 13",
+    name: "iPhone 13 Pro",
     color: "Red",
     description:
       "Refined design, enhanced display, A15 Bionic chip, advanced camera features, extended battery life.",
-    image: "./media/13-red.jpg",
+    image: "./media/13-red.png",
     imageClose: "./media/13-red-close.jpg",
     heroImage:"./media/hero-four.jpg"
   },
@@ -40,16 +40,16 @@ const data = [
     color: "Black",
     description:
       "Redesigned, edge-to-edge ProMotion display, A16 Bionic chip, improved camera, larger battery, advanced privacy features, 5G support.",
-    image: "./media/14-black.jpg",
+    image: "./media/14-black.png",
     imageClose: "./media/14-black-close.jpg",
     heroImage:"./media/hero-five.jpg"
   },
   {
-    name: "iPhone 14",
+    name: "iPhone 14 Pro",
     color: "Red",
     description:
       "Redesigned, edge-to-edge ProMotion display, A16 Bionic chip, improved camera, larger battery, advanced privacy features, 5G support.",
-    image: "./media/14-red.jpg",
+    image: "./media/14-red.png",
     imageClose: "./media/14-red-close.jpg",
     heroImage:"./media/hero-six.jpg"
   },
@@ -94,16 +94,27 @@ const create = (tag = "div", options = {}, children = []) => {
 //   )
 // );
 
-// document.querySelector("#images").append(
-//   ...data.map((img) =>
-//     create("div", {}, [
-//       create("img", {
-//         src: img.image,
-//         className: "test",
-//       }),
-//     ])
-//   )
-// );
+document.querySelector("#product-section").append(
+  ...data.map((img) =>
+    create("div", {
+      className: "product-container"
+    }, [
+      create("img", {
+        src: img.image,
+        className: "product-image",
+      }),
+      create("h1",{
+        textContent: img.name
+      })
+    ])
+  )
+);
+
+const products = document.querySelectorAll('product-container').forEach(el=>{
+console.log(el)
+})
+
+console.log(products)
 
 const imageArr = data.map((el) => el.heroImage);
 let index = 0;

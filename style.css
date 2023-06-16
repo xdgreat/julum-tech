@@ -92,3 +92,24 @@ body {
 .hero-btn :first-child {
   outline: 1px solid white;
 }
+
+.product-section {
+  display: grid;
+  grid-template-rows: 400px 400px 400px;
+  grid-template-columns: 500px 500px 500px;
+  text-align: center;
+  justify-content: center;
+}
+
+.product-image {
+  width: auto;
+  height: 300px;
+}
+.product{
+  padding-block: 3em;
+}
+.product-section-title{
+  text-align: center;
+  font-size: 70px;
+  margin-inline: auto;
+}
