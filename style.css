@@ -15,7 +15,7 @@ body {
 .logo {
   width: auto;
   height: 80px;
-  filter: hue-rotate(270deg) invert(100%);
+  filter: hue-rotate(260deg) invert(100%);
 }
 
 .navigation {
@@ -95,21 +95,120 @@ body {
 
 .product-section {
   display: grid;
-  grid-template-rows: 400px 400px 400px;
-  grid-template-columns: 500px 500px 500px;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(3, auto);
+  gap: 7em;
   text-align: center;
   justify-content: center;
 }
 
 .product-image {
   width: auto;
-  height: 300px;
+  height: 250px;
+  object-position: center;
+  margin-inline: auto;
+  padding-block: 1.5em;
 }
-.product{
-  padding-block: 3em;
-}
-.product-section-title{
+
+.product-section-title {
   text-align: center;
   font-size: 70px;
   margin-inline: auto;
+  margin-block: 1em;
+  font-weight: 500;
+}
+
+.product-container {
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  flex-direction: column;
+}
+
+.product-container > h1 {
+  font-weight: 500;
+  font-size: 1.5em;
+}
+
+.product-container > h2 {
+  font-weight: 400;
+  font-size: 1.4em;
+}
+
+.add-to-cart {
+  background-color: rgb(77, 79, 199);
+  color: white;
+  outline: 1px solid;
+  font-size: 23px;
+  margin-block-start: 1em;
+  width: 80%;
+  margin-inline: auto;
+  border-radius: 5px;
+  padding: 0.2em;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.product-container:hover .add-to-cart {
+  opacity: 1;
+  transition: opacity 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(0);
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-container:hover {
+  /* outline: 1px solid rgb(40, 42, 129); */
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(1.03);
+  box-shadow: rgba(77, 79, 199, .5) 0px 2px 4px;
+}
+.product-container:hover .details {
+  opacity: 1;
+  transition: opacity 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateX(0);
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.details {
+  color: rgb(77, 79, 199);
+  outline: 1px solid;
+  font-size: 23px;
+  margin-block-end: 1em;
+  margin-block-start: 0.5em;
+  width: 80%;
+  margin-inline: auto;
+  border-radius: 5px;
+  padding: 0.2em;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.about {
+  height: 45dvh;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+  color: white;
+}
+.about > h1{
+  font-size: 75px;
+  padding-block-start: 1em;
+  padding-block-end: .5em;
+}
+
+.about > p {
+  font-size: 28px;
+  width: 60%;
+  margin-inline: auto;
+}
+.about::before {
+  content: "";
+  background-image: url("./media/about.jpg");
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-attachment: fixed;
+  filter: brightness(80%);
 }
