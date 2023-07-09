@@ -107,3 +107,16 @@ document.querySelector("#product-section").append(
   )
 );
 
+
+
+  const detailsElements = document.querySelectorAll("details");
+
+  detailsElements.forEach((details) => {
+    details.addEventListener("click", () => {
+      detailsElements.forEach((otherDetails) => {
+        if (otherDetails !== details) {
+          otherDetails.removeAttribute("open");
+        }
+      });
+    });
+  });

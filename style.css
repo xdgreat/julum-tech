@@ -1,15 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Assistant&display=swap");
 
-:root {
-  --bg-main: ;
-  --bg-secondary: ;
-  --font-main: ;
-  --font-secondary: ;
-}
-
 body {
   font-family: "Assistant";
-  height: 500dvh;
 }
 
 .logo {
@@ -22,7 +14,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
 .links {
@@ -42,7 +34,7 @@ body {
   color: white;
   background-color: #e5e5e5;
   isolation: isolate;
-  height: 80dvh;
+  height: 70dvh;
 }
 .hero {
   background-position: bottom;
@@ -97,9 +89,11 @@ body {
   display: grid;
   grid-template-rows: repeat(3, auto);
   grid-template-columns: repeat(3, auto);
-  gap: 7em;
+  column-gap: 7em;
+  row-gap: 1em;
   text-align: center;
   justify-content: center;
+  padding: 1em 2em;
 }
 
 .product-image {
@@ -122,8 +116,9 @@ body {
   width: 250px;
   display: flex;
   justify-content: space-evenly;
-  border-radius: 10px;
+
   flex-direction: column;
+  outline: 1px solid rgba(0, 0, 0, 0.164);
 }
 
 .product-container > h1 {
@@ -140,7 +135,7 @@ body {
   background-color: rgb(77, 79, 199);
   color: white;
   outline: 1px solid;
-  font-size: 23px;
+  font-size: 20px;
   margin-block-start: 1em;
   width: 80%;
   margin-inline: auto;
@@ -159,10 +154,11 @@ body {
 }
 
 .product-container:hover {
-  /* outline: 1px solid rgb(40, 42, 129); */
-  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: border-radius 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform: scale(1.03);
-  box-shadow: rgba(77, 79, 199, .5) 0px 2px 4px;
+  box-shadow: rgba(77, 79, 199, 0.5) 0px 2px 4px;
+  border-radius: 10px;
 }
 .product-container:hover .details {
   opacity: 1;
@@ -173,7 +169,7 @@ body {
 .details {
   color: rgb(77, 79, 199);
   outline: 1px solid;
-  font-size: 23px;
+  font-size: 20px;
   margin-block-end: 1em;
   margin-block-start: 0.5em;
   width: 80%;
@@ -192,10 +188,10 @@ body {
   isolation: isolate;
   color: white;
 }
-.about > h1{
+.about > h1 {
   font-size: 75px;
   padding-block-start: 1em;
-  padding-block-end: .5em;
+  padding-block-end: 0.5em;
 }
 
 .about > p {
@@ -211,4 +207,94 @@ body {
   z-index: -1;
   background-attachment: fixed;
   filter: brightness(80%);
+}
+
+.faq-section {
+  margin-block: 1em;
+}
+
+.faq-container {
+  margin-inline: auto;
+  max-width: 1000px;
+  padding: 1em 2em;
+}
+
+.faq-details {
+  font-size: 23px;
+  margin-block: 0.5em;
+  padding: 1em 2em;
+  outline: 1px solid #0000002c;
+  cursor: pointer;
+}
+
+.faq-details[open] {
+  border-radius: 5px;
+  transition: border-radius 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  outline: 1px solid #0000006b;
+}
+
+.faq-summary {
+  list-style-type: disc;
+  font-size: 24px;
+}
+details[open] .faq-summary {
+  list-style-type: circle;
+}
+
+.faq-answers {
+  padding: 0.5em 1em;
+  font-size: 21px;
+}
+
+.faq-title {
+  text-align: center;
+  font-size: 60px;
+  margin-block-start: 0.5em;
+  font-weight: 500;
+}
+
+.faq-subtitle {
+  font-size: 27px;
+  width: 70%;
+  text-align: center;
+  margin-inline: auto;
+  margin-block: 1em;
+}
+
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  margin-block-start: 7em;
+  background-color: rgba(0, 0, 0, 0.932);
+  color: white;
+  padding: 2em 4em;
+  gap: 3em;
+  text-align: center;
+}
+
+.row-one > div > .logo {
+  mix-blend-mode: normal;
+  filter: hue-rotate(0);
+}
+
+.row-one {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.row-one > div {
+  display: flex;
+  flex-flow: column wrap;
+  gap: 0.4em;
+}
+
+.row-one > div > a {
+  font-size: 22px;
+}
+
+.row-two {
+  text-align: center;
+  font-size: 25px;
 }
